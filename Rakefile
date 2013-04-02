@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/mattolson/heroku_rails_deflate"
   gem.license = "MIT"
   gem.summary = %Q{Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku}
-  gem.description = %Q{Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku}
+  gem.description = %Q{Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku. This allows us to take advantage of higher compression ratios of prezipped files, and reduces CPU load at request time.}
   gem.email = "matt@mattolson.com"
   gem.authors = ["Matt Olson"]
   # dependencies defined in Gemfile

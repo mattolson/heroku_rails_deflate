@@ -2,7 +2,7 @@
 
 Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku
 
-## Contributing to heroku-rails-deflate
+## Contributing to heroku\_rails\_deflate
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
