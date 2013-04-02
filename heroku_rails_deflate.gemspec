@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.md",
     "Rakefile",
+    "heroku_rails_deflate.gemspec",
     "lib/heroku_rails_deflate.rb",
     "lib/heroku_rails_deflate/railtie.rb",
     "lib/heroku_rails_deflate/serve_zipped_assets.rb",
