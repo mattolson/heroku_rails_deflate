@@ -20,21 +20,12 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/mattolson/heroku_rails_deflate"
   gem.license = "MIT"
   gem.summary = %Q{Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku}
-  gem.description = %Q{Activate Rack::Deflate and serve up precompiled, gzipped assets on Heroku. This allows us to take advantage of higher compression ratios of prezipped files, and reduces CPU load at request time.}
+  gem.description = %Q{This gem is designed for use by Rails applications running on Heroku. For others, the better approach is to use a frontend server such as nginx or Apache. However, the Heroku Cedar stack is no longer fronted by a file server, and there is no automatic provision for gzipping responses. This gem activates Rack::Deflate for all requests. In addition, we serve up the gzipped versions of our precompiled assets, taking advantage of the higher compression ratio used during precompilation, and reducing CPU load at request time.}
   gem.email = "matt@mattolson.com"
   gem.authors = ["Matt Olson"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
-task :default => :test
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
