@@ -16,16 +16,24 @@ part. After you get done with this, you could take it to the next level by addin
 ## Installation
 
 * Add the gem to your app
+
     gem 'heroku_rails_deflate', :group => :production
+
 * Make sure asset caching is configured correctly in environments/production.rb:
+
     config.serve_static_assets = true
     config.assets.compress = true
     config.assets.compile = true
     config.assets.digest = true
+
 * If you want a different max-age for your static assets, you can override the default:
+
     config.static_cache_control = "public, max-age=31536000"
+
 * You should precompile your assets prior to deploying to Heroku to save CPU cycles at request time:
+
     RAILS_ENV=production rake assets:precompile
+
 
 ## Contributing to heroku\_rails\_deflate
  
