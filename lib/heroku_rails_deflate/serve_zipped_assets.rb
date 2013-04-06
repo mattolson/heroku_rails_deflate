@@ -1,10 +1,13 @@
 require 'action_controller'
 require 'active_support/core_ext/uri'
 require 'action_dispatch/middleware/static'
+require 'time'
 
 # Adapted from https://gist.github.com/guyboltonking/2152663
 module HerokuRailsDeflate
   class ServeZippedAssets
+    FIVE_YEARS = 60 * 60 * 24 * 365 * 5
+
     def initialize(app, root, assets_path, cache_control=nil)
       @app = app
       @assets_path = assets_path.chomp('/') + '/'
@@ -44,6 +47,8 @@ module HerokuRailsDeflate
               headers['Cache-Control'] += ', no-transform'
             end
 
+            # add expires header, inspired by Rack::StaticCache
+            headers['Expires'] = (Time.now + FIVE_YEARS).httpdate
             return [status, headers, body]
           end
         end
