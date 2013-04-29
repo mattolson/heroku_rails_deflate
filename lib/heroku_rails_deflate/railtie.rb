@@ -4,7 +4,14 @@ require 'heroku_rails_deflate/serve_zipped_assets'
 module HerokuRailsDeflate
   class Railtie < Rails::Railtie
     initializer "heroku_rails_deflate.middleware_initialization" do |app|
-      app.middleware.insert_before ActionDispatch::Static, Rack::Deflater
+      # Put Rack::Deflater in the right place
+      if app.config.action_controller.perform_caching
+        app.middleware.insert_after Rack::Cache, Rack::Deflater
+      else
+        app.middleware.insert_before ActionDispatch::Static, Rack::Deflater
+      end
+
+      # Insert our custom middleware for serving gzipped static assets
       app.middleware.insert_before ActionDispatch::Static, HerokuRailsDeflate::ServeZippedAssets, app.paths["public"].first, app.config.assets.prefix, app.config.static_cache_control
     end
 
