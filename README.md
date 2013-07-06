@@ -36,7 +36,7 @@ part. After you get done with this, you could take it to the next level by addin
   config.static_cache_control = "public, max-age=31536000"
 ```
 
-* You should precompile your assets prior to deploying to Heroku to save CPU cycles at request time:
+* Optionally, I prefer precompiling assets prior to deploying to Heroku to ensure that assets compile properly (if not, Heroku will enable runtime compilation which will slow your app down tremendously).
 
 ```ruby
   RAILS_ENV=production rake assets:precompile
