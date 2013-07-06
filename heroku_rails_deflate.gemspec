@@ -50,6 +50,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<timecop>, [">= 0"])
     else
       s.add_dependency(%q<rack>, ["~> 1.4.5"])
       s.add_dependency(%q<actionpack>, ["~> 3.2.13"])
@@ -57,6 +58,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<timecop>, [">= 0"])
     end
   else
     s.add_dependency(%q<rack>, ["~> 1.4.5"])
@@ -65,6 +67,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_development_dependency(%q<timecop>, [">= 0"])
   end
 end
 
