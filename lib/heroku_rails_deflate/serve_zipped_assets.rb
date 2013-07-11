@@ -49,7 +49,9 @@ module HerokuRailsDeflate
         end
       end
 
-      @app.call(env)
+      status, headers, body = @app.call(env)
+      body.close if body.respond_to?(:close)
+      [status, headers, body]
     end
   end
 end
