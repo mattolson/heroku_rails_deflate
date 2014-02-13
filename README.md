@@ -55,7 +55,8 @@ part. After you get done with this, you could take it to the next level by addin
 
 ## Thanks
 
-This gem expands on code originally published in a [gist](https://gist.github.com/guyboltonking/2152663) by [guyboltonking](https://github.com/guyboltonking). 
+This gem uses a combination of techniques from this [gist](https://gist.github.com/guyboltonking/2152663) by [guyboltonking](https://github.com/guyboltonking) and
+[romanbsd](https://github.com/romanbsd)'s gem [heroku-deflater](https://github.com/romanbsd/heroku-deflater).
 
 ## Copyright
 
