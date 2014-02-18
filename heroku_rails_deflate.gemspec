@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "heroku_rails_deflate"
-  s.version = "1.0.2"
+  s.version = "1.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Olson"]
-  s.date = "2014-02-13"
+  s.date = "2014-02-18"
   s.description = "This gem is designed for use by Rails applications running on Heroku. For others, the better approach is to use a frontend server such as nginx or Apache. However, the Heroku Cedar stack is no longer fronted by a file server, and there is no automatic provision for gzipping responses. This gem activates Rack::Deflate for all requests. In addition, we serve up the gzipped versions of our precompiled assets, taking advantage of the higher compression ratio used during precompilation, and reducing CPU load at request time."
   s.email = "matt@mattolson.com"
   s.extra_rdoc_files = [
