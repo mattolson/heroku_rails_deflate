@@ -91,5 +91,5 @@ DEPENDENCIES
   activesupport (>= 3.2.13)
   bundler
   jeweler
-  rack (~> 1.4.5)
+  rack (>= 1.4.5)
   rspec
