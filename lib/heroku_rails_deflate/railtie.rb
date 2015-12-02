@@ -4,7 +4,7 @@ require 'heroku_rails_deflate/serve_zipped_assets'
 module HerokuRailsDeflate
   class Railtie < Rails::Railtie
     # Use after_initialize to ensure that all other middleware is already loaded
-    initializer "heroku_rails_deflate.middleware_initialization", :after => :load_config_initializers do |app|
+    initializer "heroku_rails_deflate.middleware_initialization" do |app|
       # Put Rack::Deflater in the right place
       if app.config.action_controller.perform_caching && app.config.action_dispatch.rack_cache
         # If Rack::Cache is enabled, make sure we are caching compressed files
