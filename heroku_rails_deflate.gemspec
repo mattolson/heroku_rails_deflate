@@ -45,23 +45,23 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rack>, [">= 1.4.5"])
-      s.add_runtime_dependency(%q<actionpack>, [">= 3.2.13"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 3.2.13"])
+      s.add_runtime_dependency(%q<actionpack>, [">= 5.0.0"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 5.0.0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rack>, [">= 1.4.5"])
-      s.add_dependency(%q<actionpack>, [">= 3.2.13"])
-      s.add_dependency(%q<activesupport>, [">= 3.2.13"])
+      s.add_dependency(%q<actionpack>, [">= 5.0.0"])
+      s.add_dependency(%q<activesupport>, [">= 5.0.0"])
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<rack>, [">= 1.4.5"])
-    s.add_dependency(%q<actionpack>, [">= 3.2.13"])
-    s.add_dependency(%q<activesupport>, [">= 3.2.13"])
+    s.add_dependency(%q<actionpack>, [">= 5.0.0"])
+    s.add_dependency(%q<activesupport>, [">= 5.0.0"])
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
