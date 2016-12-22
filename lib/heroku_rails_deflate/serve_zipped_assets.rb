@@ -13,7 +13,7 @@ module HerokuRailsDeflate
     def initialize(app, root, asset_prefix, cache_control=nil)
       @app = app
       @asset_prefix = asset_prefix.chomp('/') + '/'
-      @file_handler = ActionDispatch::FileHandler.new(root, cache_control)
+      @file_handler = ActionDispatch::FileHandler.new(root, headers: { "Cache-Control" => cache_control })
     end
 
     def call(env)
@@ -42,7 +42,7 @@ module HerokuRailsDeflate
             headers['Content-Type'] = Rack::Mime.mime_type(File.extname(path), 'text/plain')
 
             # Update cache-control to add directive telling Rack::Deflate to leave it alone.
-            cache_control = headers['Cache-Control'].try(:to_s).try(:downcase)
+            cache_control = headers['Cache-Control']&.to_s&.downcase
             if cache_control.nil?
               headers['Cache-Control'] = 'no-transform'
             elsif !cache_control.include?('no-transform')
