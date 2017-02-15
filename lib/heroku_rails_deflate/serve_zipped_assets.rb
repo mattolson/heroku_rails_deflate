@@ -13,7 +13,7 @@ module HerokuRailsDeflate
     def initialize(app, root, asset_prefix, cache_control=nil)
       @app = app
       @asset_prefix = asset_prefix.chomp('/') + '/'
-      @file_handler = ActionDispatch::FileHandler.new(root, cache_control)
+      @file_handler = ActionDispatch::FileHandler.new(root, headers: { "Cache-Control" => cache_control })
     end
 
     def call(env)
